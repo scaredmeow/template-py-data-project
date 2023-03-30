@@ -6,7 +6,7 @@ Please read this document carefully before making any contributions. It contains
 
 ## Code of Conduct
 
-We expect all contributors to follow our [code of conduct](link to code of conduct). Please report any unacceptable behavior to the project maintainer.
+We expect all contributors to follow our [code of conduct](CODE_OF_CONDUCT.md). Please report any unacceptable behavior to the project maintainer.
 
 ## How to Contribute
 
@@ -24,15 +24,26 @@ Please follow these steps to make a contribution:
 
 1. Check the [issues](link to issues) page to see if there is an existing issue related to your contribution. If not, create a new issue and describe your contribution clearly and concisely.
 2. Fork the repository and create a new branch from the main branch. Name your branch according to the following convention: `feature/your-feature-name` or `bugfix/your-bugfix-name`.
-3. Make your changes in your branch and commit them with a meaningful message. Follow the [commit message guidelines](link to commit message guidelines).
+3. Make your changes in your branch and commit them with a meaningful message. Follow the [commit message guidelines](#commit-message-guidelines).
 4. Push your branch to your forked repository and create a pull request to the main branch of the original repository. Reference the issue number in your pull request description and explain what your changes do and why they are needed.
 5. Wait for the project maintainer or other contributors to review your pull request and provide feedback. Address any comments or requests for changes and update your pull request accordingly.
 6. Once your pull request is approved and merged, delete your branch and update your local and forked repositories.
 
-<<<<<<< HEAD
+### Project Structure
+
+This project follows a standard data science project structure, as described below:
+
+- `docs`: This folder contains the task and project documentation, such as the project proposal, project plan, and final report. Each document should have a clear name and purpose.
+- `data`: This folder contains the raw and processed data files used for analysis and modeling. Do not upload any sensitive or confidential data to this folder.
+- `notebooks`: This folder contains the Jupyter notebooks that perform data exploration, analysis, visualization, and modeling. Each notebook should have a clear title and purpose.
+- `scripts`: This folder contains the Python scripts that automate data processing, model training, testing, and evaluation. Each script should have a clear name and function.
+- `models`: This folder contains the trained and saved models, as well as any model artifacts such as weights, parameters, or metadata. Each model file should have a clear name and description.
+- `reports`: This folder contains the reports or presentations that summarize the results and findings of the project. Each report file should have a clear name and format.
+- `requirements.txt`: This file lists the Python packages and dependencies required to run the project. Use `pip install -r requirements.txt` to install them.
+
 ### Raising Issues
 
-If there are any issues, new features, or bugs found, you may raise an issue found in the [issues](link-here) page. However, you may have to consider the following before making an issue.
+If there are any issues, new features, or bugs found, you may raise an issue found in the [issues](link to issues) page. However, you may have to consider the following before making an issue.
 
 1. Make sure that your issue is unique and was not raised before. You might want to search for existing or closed issues that might solve the problem. Duplicated issues would be closed for housekeeping purposes.
 2. Check if your current commit is the updated commit. There might be changes or updates that were updated in the latest commits or pull requests.
@@ -49,63 +60,73 @@ When creating pull requests, it is generally acceptable to make pull requests th
 3. The topic branch should branch off from the main branch that tackles in addressing a particular issue. **Make sure that you're not pushing from the main branch** by checking your current branch from time to time.
 4. Be patient when asking for review. Someone would review your pull request eventually.
 
-=======
->>>>>>> 56e846ccdbdfad128e09cd1cab9a7af8835a1853
-## Project Structure
+### Commit Message Guidelines
 
-This project follows a standard data science project structure, as described below:
+We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for our commit messages. This helps us to maintain a consistent and readable commit history, as well as to generate changelogs and release notes automatically.
 
-- `data`: This folder contains the raw and processed data files used for analysis and modeling. Do not upload any sensitive or confidential data to this folder.
-- `notebooks`: This folder contains the Jupyter notebooks that perform data exploration, analysis, visualization, and modeling. Each notebook should have a clear title and purpose, and follow the [notebook style guide](link to notebook style guide).
-- `scripts`: This folder contains the Python scripts that automate data processing, model training, testing, and evaluation. Each script should have a clear name and function, and follow the [script style guide](link to script style guide).
-- `models`: This folder contains the trained and saved models, as well as any model artifacts such as weights, parameters, or metadata. Each model file should have a clear name and description.
-- `reports`: This folder contains the reports or presentations that summarize the results and findings of the project. Each report file should have a clear name and format.
-- `requirements.txt`: This file lists the Python packages and dependencies required to run the project. Use `pip install -r requirements.txt` to install them.
+A conventional commit message has the following structure:
 
-<<<<<<< HEAD
-=======
-## Coding Standards
+```
+<type>(optional scope): <description>
 
-We follow the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide for Python code formatting and naming conventions. We also use [black](https://github.com/psf/black) as our code formatter and [flake8](https://flake8.pycqa.org/en/latest/) as our code linter.
+(optional body)
 
-Please make sure your code is formatted and linted before submitting a pull request. You can use the following commands to do so:
-
-```bash
-# Format code with black
-black .
-
-# Lint code with flake8
-flake8 .
+(optional footer(s))
 ```
 
-We also use [docstrings](https://www.python.org/dev/peps/pep-0257/) to document our code and functions. We follow the [Google style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) for docstrings.
+- `<type>`: A word that indicates the kind of change that the commit introduces, such as `feat`, `fix`, `docs`, `test`, etc. See the [list of types](#types) below for more details.
+- `(optional scope)`: An optional word or phrase that specifies the scope of the change, such as `api`, `ui`, `core`, etc. The scope should be lowercase and use hyphens to separate words.
+- `<description>`: A concise summary of the change in the present tense and imperative mood, such as "add new feature", "fix bug", "update documentation", etc. The description should start with a lowercase letter and end with a period.
+- `(optional body)`: An optional paragraph or paragraphs that provide more details about the change, such as the motivation, rationale, design decisions, trade-offs, etc. The body should be separated from the description by a blank line and wrap at 72 characters.
+- `(optional footer(s))`: An optional section or sections that provide additional information or references related to the change, such as issue numbers, breaking changes, co-authors, acknowledgments, etc. The footer should be separated from the body by a blank line and use a keyword followed by a colon and a space, such as "Fixes: #123", "BREAKING CHANGE: new API", "Co-authored-by: John Doe <john.doe@example.com>", etc.
 
-Please make sure your code is documented before submitting a pull request. You can use the following command to check your docstrings:
+#### Types
 
-```bash
-# Check docstrings with pydocstyle
-pydocstyle .
+The following is a list of common types that we use for our commit messages, along with their meanings and examples:
+
+- `feat`: A new feature or functionality for the user or the system. Example: `feat(api): add new endpoint for user registration`.
+- `fix`: A bug fix or a correction of an error or defect. Example: `fix(ui): fix broken layout on mobile devices`.
+- `docs`: A change or addition to the documentation. Example: `docs: update README.md with installation instructions`.
+- `test`: A change or addition to the tests or testing tools. Example: `test: add unit test for new feature`.
+- `refactor`: A change that improves the code quality or structure without changing its behavior or functionality. Example: `refactor(core): extract common logic into a helper function`.
+- `style`: A change that affects the code style or formatting without changing its meaning or functionality. Example: `style: apply black code formatter`.
+- `perf`: A change that improves the performance or efficiency of the code or system. Example: `perf(core): optimize database query`.
+- `build`: A change that affects the build system or external dependencies. Example: `build: upgrade to Python 3.9`.
+- `ci`: A change that affects the continuous integration or delivery system or configuration. Example: `ci: add GitHub Actions workflow`.
+- `chore`: A change that does not fit into any of the above types or that does not affect the code or system. Example: `chore: update .gitignore file`.
+
+#### Examples
+
+Here are some examples of good and bad commit messages:
+
+Good:
+
+```
+feat(ui): add dark mode toggle
+
+Add a button in the settings page that allows the user to switch between light and dark mode.
+
+Closes #456
 ```
 
-## Testing
+Bad:
 
-We use [pytest](https://docs.pytest.org/en/stable/) as our testing framework for Python code. We write unit tests for our functions and classes, as well as integration tests for our scripts and notebooks.
-
-Please make sure your code is
-
-## Testing
-
-We use [pytest](https://docs.pytest.org/en/stable/) as our testing framework for Python code. We write unit tests for our functions and classes, as well as integration tests for our scripts and notebooks.
-
-Please make sure your code is tested before submitting a pull request. You can use the following command to run the tests:
-
-```bash
-# Run tests with pytest
-pytest .
 ```
->>>>>>> 56e846ccdbdfad128e09cd1cab9a7af8835a1853
+added dark mode
+```
 
-```bash
-# Run tests with pytest
-pytest .
+Good:
+
+```
+fix(api): handle invalid input gracefully
+
+Return a 400 Bad Request response instead of raising an exception when the input is invalid.
+
+Fixes #789
+```
+
+Bad:
+
+```
+fixed bug
 ```

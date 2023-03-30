@@ -1,23 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/venv,data,python,visualstudiocode,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=venv,data,python,visualstudiocode,jupyternotebooks
 
-### Data ###
-*.csv
-*.dat
-*.efx
-*.gbr
-*.key
-*.pps
-*.ppt
-*.pptx
-*.sdf
-*.tax2010
-*.vcf
-*.xml
-*.xlsx
-*.xls
-data/
-
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
@@ -200,18 +183,6 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
-
-### venv ###
-# Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
-pip-selfcheck.json
 
 ### VisualStudioCode ###
 .vscode/*
