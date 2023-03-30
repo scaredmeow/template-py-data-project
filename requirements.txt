@@ -1,0 +1,10 @@
+# Coding Standards
+black
+flake8
+pydocstyle
+
+# Testing
+pytest
+
+# Python Notebook Kernel
+ipykernel
